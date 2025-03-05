@@ -16,53 +16,60 @@
     <h1>Quiz sur HTML et CSS</h1>
     <p>Testez vos connaissances en HTML et CSS en répondant aux questions ci-dessous.</p>
     
-    <form>
+    <form action="resultats.php" method="post" oninput="result.value=age.value">
+
         <fieldset>
             <legend>Informations personnelles</legend>
-            <label for="nom">Nom :</label>
+            <span class="nom">Nom :</label> 
             <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
-            
-            <label for="prenom">Prénom :</label>
+            <br>
+            <span class="prenom">Prénom :</label>
             <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
-            
-            <label for="email">E-mail :</label>
-            <input type="email" id="email" name="email" placeholder="Votre e-mail" required>
+            <br>
+            <span class="email">E-mail :</label>
+            <input type="email" id="email" name="email" placeholder="Votre e-mail" pattern=".+@.+\..+" required>
+            <br>
+            <span class="age">Âge : </span>
+            <input type="range" name="age" min="5" max="120" value="50">
+            <output name="result"></output>
         </fieldset>
         
         <label for="date">Date du Quiz :</label>
-        <input type="date" id="date" name="date">
+        <input type="date" name="DateQuiz"> 
         
         <fieldset>
             <legend>Question à choix unique</legend>
-            <p>Quel élément HTML est utilisé pour insérer un saut de ligne ?</p>
-            <label><input type="radio" name="q1" value="br" required> &lt;br&gt;</label>
-            <label><input type="radio" name="q1" value="p"> &lt;p&gt;</label>
-            <label><input type="radio" name="q1" value="div"> &lt;div&gt;</label>
+                <p>Quel élément HTML est utilisé pour insérer un saut de ligne ?</p>
+                <label><input type="radio" name="q1" value="br" required> &lt;br&gt;</label>
+                <label><input type="radio" name="q1" value="p"> &lt;p&gt;</label>
+                <label><input type="radio" name="q1" value="div"> &lt;div&gt;</label>
         </fieldset>
-        
+
         <fieldset>
             <legend>Question à choix multiples</legend>
-            <p>Quels éléments sont des balises HTML de structure ?</p>
-            <label><input type="checkbox" name="q2" value="header"> &lt;header&gt;</label>
-            <label><input type="checkbox" name="q2" value="article"> &lt;article&gt;</label>
-            <label><input type="checkbox" name="q2" value="span"> &lt;span&gt;</label>
-            <label><input type="checkbox" name="q2" value="footer"> &lt;footer&gt;</label>
+                <p>Quel élément HTML sont des balises HTML de structure ?</p>
+                <label><input type="checkbox" name="q2" value="header" > &lt;header&gt;</label>
+                <label><input type="checkbox" name="q2" value="div"> &lt;div&gt;</label>
+                <label><input type="checkbox" name="q2" value="footer"> &lt;div&gt;</label>
+                <label><input type="checkbox" name="q2" value="p"> &lt;p&gt;</label>
         </fieldset>
-        
-        <label for="css-select">Quel est le rôle du CSS ?</label>
-        <select id="css-select" name="css-select" required>
-            <option value="">-- Sélectionnez une réponse --</option>
-            <optgroup label="Mise en page">
-                <option value="style">Appliquer du style aux éléments HTML</option>
+
+        <label for="select_css">Quel est le rôle du CSS ?</label>
+        <select name="select_css">
+            <option value="">-- Sélectionnez une réponse -- </option>
+            <optgroup label="Structure"> 
+                <option value="1.1"> Le CSS sert à améliorer la structure</option>
+                <option value="1.2"> Le CSS sert à faire la structure</option>
             </optgroup>
-            <optgroup label="Structure">
-                <option value="structure">Définir la structure d'une page</option>
+            <optgroup label="Style"> 
+                <option value="2.1"> Le CSS sert à ajouter du style</option>
+                <option value="2.2"> Le CSS est obligatoire</option>
             </optgroup>
         </select>
-        
-        <label for="code">Écrivez un exemple de code HTML ou CSS :</label>
-        <textarea id="code" name="code" rows="5" placeholder="Entrez votre code ici..."></textarea>
-        
+
+        <label for="code">Entrer du code HTML ou CSS ci-dessous :</label>
+        <textarea name="code" id="code" rows="10" placeholder="Entrer votre code ici"></textarea><br>
+
         <button type="submit">Envoyer</button>
     </form>
 </body>
