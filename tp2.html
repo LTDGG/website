@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz HTML & CSS</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        form { max-width: 600px; margin: auto; }
+        label { display: block; margin-top: 10px; }
+        input:invalid { border: 2px solid red; }
+        input:valid { border: 2px solid green; }
+    </style>
+</head>
+<body>
+    <h1>Quiz sur HTML et CSS</h1>
+    <p>Testez vos connaissances en HTML et CSS en répondant aux questions ci-dessous.</p>
+    
+    <form>
+        <fieldset>
+            <legend>Informations personnelles</legend>
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+            
+            <label for="prenom">Prénom :</label>
+            <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
+            
+            <label for="email">E-mail :</label>
+            <input type="email" id="email" name="email" placeholder="Votre e-mail" required>
+        </fieldset>
+        
+        <label for="date">Date du Quiz :</label>
+        <input type="date" id="date" name="date">
+        
+        <fieldset>
+            <legend>Question à choix unique</legend>
+            <p>Quel élément HTML est utilisé pour insérer un saut de ligne ?</p>
+            <label><input type="radio" name="q1" value="br" required> &lt;br&gt;</label>
+            <label><input type="radio" name="q1" value="p"> &lt;p&gt;</label>
+            <label><input type="radio" name="q1" value="div"> &lt;div&gt;</label>
+        </fieldset>
+        
+        <fieldset>
+            <legend>Question à choix multiples</legend>
+            <p>Quels éléments sont des balises HTML de structure ?</p>
+            <label><input type="checkbox" name="q2" value="header"> &lt;header&gt;</label>
+            <label><input type="checkbox" name="q2" value="article"> &lt;article&gt;</label>
+            <label><input type="checkbox" name="q2" value="span"> &lt;span&gt;</label>
+            <label><input type="checkbox" name="q2" value="footer"> &lt;footer&gt;</label>
+        </fieldset>
+        
+        <label for="css-select">Quel est le rôle du CSS ?</label>
+        <select id="css-select" name="css-select" required>
+            <option value="">-- Sélectionnez une réponse --</option>
+            <optgroup label="Mise en page">
+                <option value="style">Appliquer du style aux éléments HTML</option>
+            </optgroup>
+            <optgroup label="Structure">
+                <option value="structure">Définir la structure d'une page</option>
+            </optgroup>
+        </select>
+        
+        <label for="code">Écrivez un exemple de code HTML ou CSS :</label>
+        <textarea id="code" name="code" rows="5" placeholder="Entrez votre code ici..."></textarea>
+        
+        <button type="submit">Envoyer</button>
+    </form>
+</body>
+</html>
